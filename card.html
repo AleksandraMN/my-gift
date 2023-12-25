@@ -8,6 +8,8 @@
       <link rel="stylesheet" href="css/style.css">
    
       <link rel="icon" href="img/Frame.svg" type="image/svg+xml">
+
+      <script src="js/scriptCard.js" defer></script>
    </head>
 <body class="body body--congratulation">
    
@@ -21,7 +23,40 @@
          height="48">
       </div>
    </header>
+   <main class="main-content">
+      <section class="congratulation">
+         <div class="container">
+            <h1 class="congratulations__title">Вам открытка!</h1>
+            <p class="congratulations__description">Нажмите на нее, чтобы узнать от кого она и прочитать поздравление</p>
 
-   <section class="congratulation"></section>
+            <div class="congratulations__card card">
+               <div class="card__inner">
+                  <div class="card__front">
+                     <img src="img/Card_02.jpg" alt="Открытка" class="card__image">
+                  </div>
+                  <div class="card__back">
+                     <h2 class="card__title">Поздравление</h2>
+                     <div class="card__contacts">
+                        <p class="card__detail">
+                           <span class="card__subtitle">от кого</span>
+                           <span class="card__from">Иван Иванов</span>
+                        </p>
+                        <p class="card__detail">
+                           <span class="card__subtitle">кому</span>
+                           <span class="card__to">Татьяна Айкина</span>
+                        </p>
+                     </div>
+                     <p class="card__message">
+                        Желаю Счастливого Нового года и Рождества!<br>
+                        Будьте здоровы и радостны!
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+   </main>
+   
 </body>
 </html>

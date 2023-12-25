@@ -10,6 +10,11 @@
    />
 
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <script src="https://unpkg.com/imask" defer></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js" defer></script>
+
+   <script src="js/script.js" defer></script>
+
    <link rel="stylesheet" href="css/normalize.css">
    <link rel="stylesheet" href="css/style.css">
 
@@ -31,7 +36,7 @@
    <main class="main-content">
       <section class="gift">
          <div class="container">
-            <h1 class="gift__title">Поздравьте близкого человека с праздником!</h1>
+            <h1 class="gift__title">Поздравьте близкого человека с&nbsp;праздником!</h1>
 
             <p class="gift__description">Выберите открытку и получатель получит ее на свой телефон</p>
 
@@ -41,36 +46,45 @@
                   <div class="swiper gift__swiper gift__swiper--card">
                      <!-- Additional required wrapper -->
                      <div class="swiper-wrapper">
-                     <!-- Slides -->
-                     <div class="swiper-slide gift__card-slide">
-                        <img class="gift__card-image" src="img/Card_02.jpg" alt="Открытка №1">
-                     </div>
-                     <div class="swiper-slide gift__card-slide">
-                        <img class="gift__card-image" src="img/Card_03.jpg" alt="Открытка №2"></div>
-                     <div class="swiper-slide gift__card-slide">
-                        <img class="gift__card-image" src="img/Card_04.jpg" alt="Открытка №3"></div>
-                     <div class="swiper-slide gift__card-slide">
-                        <img class="gift__card-image" src="img/Card_05.jpg" alt="Открытка №4"></div>
-                     </div>
-                                          
+                        <!-- Slides -->
+                        <div class="swiper-slide gift__card-slide">
+                           <img class="gift__card-image" src="img/Card_01.jpg" alt="Открытка №1" data-card="Card_01">
+                        </div>
+                        
+                        <div class="swiper-slide gift__card-slide">
+                           <img class="gift__card-image" src="img/Card_02.jpg" alt="Открытка №2" data-card="Card_02">
+                        </div>
+                        <div class="swiper-slide gift__card-slide">
+                           <img class="gift__card-image" src="img/Card_03.jpg" alt="Открытка №3" data-card="Card_03">
+                        </div>
+                        <div class="swiper-slide gift__card-slide">
+                           <img class="gift__card-image" src="img/Card_04.jpg" alt="Открытка №4" data-card="Card_04">
+                        </div>
+                        <div class="swiper-slide gift__card-slide">
+                           <img class="gift__card-image" src="img/Card_05.jpg" alt="Открытка №5" data-card="Card_05">
+                        </div>
+                     </div>                  
                   </div>
 
                   <div class="swiper gift__swiper gift__swiper--thumb">
                      <!-- Additional required wrapper -->
                      <div class="swiper-wrapper">
-                     <!-- Slides -->
-                     <div class="swiper-slide gift__card-thumb">
-                        <img class="gift__card-image" src="img/Card_02.jpg" alt="Открытка №1">
-                     </div>
-                     <div class="swiper-slide gift__card-thumb">
-                        <img class="gift__card-image" src="img/Card_03.jpg" alt="Открытка №2">
-                     </div>
-                     <div class="swiper-slide gift__card-thumb">
-                        <img class="gift__card-image" src="img/Card_04.jpg" alt="Открытка №3">
-                     </div>
-                     <div class="swiper-slide gift__card-thumb">
-                        <img class="gift__card-image" src="img/Card_05.jpg" alt="Открытка №4">
-                     </div>
+                        <!-- Slides -->
+                        <div class="swiper-slide gift__card-thumb">
+                           <img class="gift__card-image" src="img/Card_01.jpg" alt="Открытка №1">
+                        </div>
+                        <div class="swiper-slide gift__card-thumb">
+                           <img class="gift__card-image" src="img/Card_02.jpg" alt="Открытка №2">
+                        </div>
+                        <div class="swiper-slide gift__card-thumb">
+                           <img class="gift__card-image" src="img/Card_03.jpg" alt="Открытка №3">
+                        </div>
+                        <div class="swiper-slide gift__card-thumb">
+                           <img class="gift__card-image" src="img/Card_04.jpg" alt="Открытка №4">
+                        </div>
+                        <div class="swiper-slide gift__card-thumb">
+                           <img class="gift__card-image" src="img/Card_05.jpg" alt="Открытка №5">
+                        </div>
                      </div>
                      
                   </div>
@@ -89,7 +103,7 @@
                      <span class="form__label-text">
                         телефон отправителя
                      </span>
-                     <input type="text" class="form__field" name="sender_phone">
+                     <input type="text" class="form__field form__field--phone" name="sender_phone">
                   </label>
 
                   <label  class="form__label">
@@ -103,7 +117,7 @@
                      <span class="form__label-text">
                         телефон получателя
                      </span>
-                     <input type="text" class="form__field" name="receiver_phone">
+                     <input type="text" class="form__field form__field--phone" name="receiver_phone">
                   </label>
 
                   <label  class="form__label form__label--textarea">
@@ -112,6 +126,8 @@
                      </span>
                      <textarea  class="form__field form__field--textarea" name="message" placeholder="Напишите теплые слова"> </textarea>
                   </label>
+
+                  <input class="form__card" type="hidden" name="card">
 
                   <button type="submit" class="form__button" disabled>Отправить</button>
 
